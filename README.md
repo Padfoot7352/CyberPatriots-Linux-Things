@@ -13,12 +13,6 @@ sleep 2
 sudo ufw status
 sleep 2
 
-apt install clamav
-sleep 2
-clamscan -r --remove /home
-sleep 2
-
-
 apt remove john-the-ripper
 sleep 1
 apt remove hydra
