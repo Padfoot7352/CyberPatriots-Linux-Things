@@ -13,6 +13,8 @@ sleep 2
 sudo ufw status
 sleep 2
 
+sudo apt install firefox
+
 apt remove john-the-ripper
 sleep 1
 apt remove hydra
