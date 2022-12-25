@@ -14,6 +14,10 @@ sudo ufw status
 sleep 2
 
 sudo apt install firefox
+sleep 2
+
+sudo apt install libpam-cracklib
+sleep 2
 
 apt remove john-the-ripper
 sleep 1
