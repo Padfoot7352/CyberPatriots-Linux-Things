@@ -2,6 +2,7 @@
 
 #!/bin/bash
 
+#firewall-stuff
 sudo ufw reset
 sleep 2
 sudo ufw enable
@@ -13,12 +14,19 @@ sleep 2
 sudo ufw status
 sleep 2
 
+#install-firefox
 sudo apt install firefox
 sleep 2
 
+#disable-guest-account
+sudo echo "allow-guest=false" >> 50-ubuntu.conf
+sleep 2
+
+#pam-file-stuff
 sudo apt install libpam-cracklib
 sleep 2
 
+#delete-bad-apps
 apt remove john-the-ripper
 sleep 1
 apt remove hydra
