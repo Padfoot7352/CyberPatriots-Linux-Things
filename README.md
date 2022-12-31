@@ -32,6 +32,14 @@ sleep 1
 sed -i 's/yescrypt/sha512/' common-password
 sleep 2
 
+#password-history-requirements
+cd /etc
+sleep 1
+sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t90/' login.defs
+sleep 1
+sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t10/' login.defs
+sleep 1
+
 #delete-bad-apps
 apt remove john-the-ripper
 sleep 1
