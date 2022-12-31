@@ -27,18 +27,22 @@ sudo apt install libpam-cracklib
 sleep 1
 cd /etc/pam.d
 sleep 1
-sed -i 's/pam_pwquality.so retry=3/pam_cracklib.so retry=3 minlen=8 difok=3 ucredit=-1 lcredit=-1 ocre$/' common-password
+sudo sed -i 's/pam_pwquality.so retry=3/pam_cracklib.so retry=3 minlen=8 difok=3 ucredit=-1 lcredit=-1 ocre$/' common-password
 sleep 1
-sed -i 's/yescrypt/sha512/' common-password
+sudo sed -i 's/yescrypt/sha512/' common-password
 sleep 2
 
 #password-history-requirements
 cd /etc
 sleep 1
-sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t90/' login.defs
+sudo sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t90/' login.defs
 sleep 1
-sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t10/' login.defs
+sudo sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t10/' login.defs
 sleep 1
+
+#account-lockout-policy
+sudo echo "auth required pam_tally2.so deny=5 onerr=fail unlock_time=1800" >> common-auth
+sleep 2
 
 #delete-bad-apps
 apt remove john-the-ripper
