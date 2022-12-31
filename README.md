@@ -146,6 +146,7 @@ sleep 1
 apt remove o wesside-ng
 sleep 1
 
+#install-audits
 apt-get install auditd
 sleep 1
 auditctl –e 1
