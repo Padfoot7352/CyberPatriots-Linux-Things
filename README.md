@@ -24,6 +24,12 @@ sleep 2
 
 #pam-file-stuff
 sudo apt install libpam-cracklib
+sleep 1
+cd /etc/pam.d
+sleep 1
+sed -i 's/pam_pwquality.so retry=3/pam_cracklib.so retry=3 minlen=8 difok=3 ucredit=-1 lcredit=-1 ocre$/' common-password
+sleep 1
+sed -i 's/yescrypt/sha512/' common-password
 sleep 2
 
 #delete-bad-apps
