@@ -160,4 +160,10 @@ sleep 1
 auditctl –e 1
 sleep 2
 
+#app-updates
+sudo apt update
+sleep 1
+sudo apt upgrade
+sleep 1
+
 #END
