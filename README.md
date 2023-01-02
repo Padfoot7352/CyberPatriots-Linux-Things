@@ -40,6 +40,14 @@ sleep 1
 sudo sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t10/' login.defs
 sleep 1
 
+#disable-booting-from-external-devices
+cd /etc/modprobe.d
+sleep 1
+touch block_usb.conf
+sleep 1
+sudo echo "install usb-storage /bin/true" >> block_usb.conf
+sleep 2
+
 #account-lockout-policy
 sudo echo "auth required pam_tally2.so deny=5 onerr=fail unlock_time=1800" >> common-auth
 sleep 2
