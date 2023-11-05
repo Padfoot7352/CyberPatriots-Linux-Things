@@ -153,6 +153,10 @@ apt remove o tkiptun-ng
 sleep 1
 apt remove o wesside-ng
 sleep 1
+apt remove ettercap
+sleep 1
+apt remove deluge
+sleep 1
 
 #install-audits
 apt-get install auditd
